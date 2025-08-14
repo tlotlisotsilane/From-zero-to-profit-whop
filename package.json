@@ -1,0 +1,15 @@
+{  
+  "name": "from-zero-to-profit-whop",  
+  "version": "1.0.0",  
+  "description": "Whop integration for comprehensive 5-module From Zero to Profit course",  
+  "scripts": {  
+    "dev": "next dev",  
+    "build": "next build",  
+    "start": "next start"  
+  },  
+  "dependencies": {  
+    "next": "^14.0.0",  
+    "react": "^18.2.0",  
+    "react-dom": "^18.2.0"  
+  }  
+}  
