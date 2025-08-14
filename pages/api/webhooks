@@ -1,0 +1,33 @@
+export default function handler(req, res) {  
+  if (req.method === 'POST') {  
+    const { event, data } = req.body;  
+      
+    console.log('From Zero to Profit webhook received:', { event, data });  
+      
+    // Handle different webhook events for your 5-module course  
+    switch (event) {  
+      case 'payment_completed':  
+        console.log('Payment completed - Course access granted');  
+        // Trigger Discord role assignment for your 3-tier structure  
+        break;  
+      case 'membership_created':  
+        console.log('New member joined From Zero to Profit');  
+        // Send welcome sequence for Module 1 access  
+        break;  
+      case 'subscription_cancelled':  
+        console.log('Member cancelled subscription');  
+        // Remove course access and Discord roles  
+        break;  
+      default:  
+        console.log('Unhandled webhook event:', event);  
+    }  
+      
+    res.status(200).json({   
+      received: true,   
+      course: 'From Zero to Profit',  
+      message: 'Webhook processed successfully'   
+    });  
+  } else {  
+    res.status(405).json({ error: 'Method not allowed' });  
+  }  
+}  
